@@ -1,31 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class UserInput extends Component {
+function userInput (props) {
+    return (
+        <form>
+            <label>
+                Name:
+                <input type="text" value={props.currentName} onChange={props.changed}/>
+            </label>
 
-    constructor(props) {
-        super(props);
-        this.state = {
-           name: 'noah'
-        }
-      }
-
-    submit(event) {
-        this.setState({
-          name: event.target.value
-        })
-      }
-    
-    render() {
-        return (
-            <form>
-                <label>
-                    Name:
-                    <input type="text" name="name" />
-                </label>
-                <input type="submit" value="Submit" onClick={this.submit}/>
-            </form>
-        )
-    }
+        </form>
+    )
 }
 
-export default UserInput;
+export default userInput;
